@@ -1,5 +1,7 @@
 package com.aor.numbers;
+import com.bmcl.numbers.GenericListDeduplicator;
 import com.bmcl.numbers.ListAggregator;
+import com.bmcl.numbers.ListDeduplicator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,21 +13,15 @@ public class ListAggregatorTest {
 
     private List<Integer> list;
     private List<Integer> list7263;
-    //private List<Integer> list8726;
+    private List<Integer> list8726;
 
     @BeforeEach
     public void setUp() {
         list = Arrays.asList(1, 2, 4, 2, 5);
         list7263 = Arrays.asList(-1, -4, -5);
-        //list8726 = Arrays.asList(1, 2, 4,2);
+        list8726 = Arrays.asList(1, 2, 4,2);
 
     }
-    /*@Test
-    public void bug8726() {
-        ListAggregator aggregator = new ListAggregator();
-        int max = aggregator.max(list8726);
-        Assertions.assertEquals(3, max);
-    }*/
 
     @Test
     public void bug7263() {
@@ -42,12 +38,12 @@ public class ListAggregatorTest {
         Assertions.assertEquals(14, sum);
 
     }
-    /*@Test
+    @Test
     public void max() {
         ListAggregator aggregator = new ListAggregator();
         int max = aggregator.max(list);
         Assertions.assertEquals(5, max);
-    }*/
+    }
 
     @Test
     public void min() {
@@ -58,11 +54,29 @@ public class ListAggregatorTest {
 
     @Test
     public void distinct() {
+        class StubListDeduplicator implements GenericListDeduplicator {
+            @Override public List<Integer> deduplicate(List<Integer> list) {
+                return  Arrays.asList(1, 2, 4, 5);
+            }
+        }
         ListAggregator aggregator = new ListAggregator();
-        int distinct = aggregator.distinct(list);
+        StubListDeduplicator deduplicator = new StubListDeduplicator();
+        int distinct = aggregator.distinct(list8726, deduplicator);
         Assertions.assertEquals(4, distinct);
     }
-
+    @Test
+    public void bug8726() {
+        List<Integer> list= Arrays.asList(1,2,4,2);
+        class StubListDeduplicator implements GenericListDeduplicator {
+            @Override public List<Integer> deduplicate(List<Integer> list) {
+                return  Arrays.asList(1, 2, 4);
+            }
+        }
+        ListAggregator aggregator = new ListAggregator();
+        StubListDeduplicator deduplicator = new StubListDeduplicator();
+        int distinct = aggregator.distinct(list8726, deduplicator);
+        Assertions.assertEquals(3, distinct);
+    }
 
 }
 
