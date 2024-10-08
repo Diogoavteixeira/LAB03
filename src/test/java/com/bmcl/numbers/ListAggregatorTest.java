@@ -5,13 +5,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
+
+
 public class ListAggregatorTest {
 
     private List<Integer> list;
+    private List<Integer> bugListmax;
+
+
     @BeforeEach
     public void setUp() {
-        //list = Arrays.asList(1,2,4,2,5);
-        list = Arrays.asList(-1,-4,-5);
+        list = Arrays.asList(1, 2, 4, 2, 5);
+        bugListmax = Arrays.asList(-1, -4, -5);
+    }
+
+    @Test
+    public void maxbug7263() {
+        ListAggregator aggregator = new ListAggregator();
+        int max = aggregator.max(bugListmax);
+        Assertions.assertEquals(-1, max);
     }
 
     @Test
@@ -20,12 +32,12 @@ public class ListAggregatorTest {
         int sum = aggregator.sum(list);
         Assertions.assertEquals(14, sum);
     }
+
     @Test
     public void max() {
-        List<Integer> list = Arrays.asList(-1, -4, -5);
         ListAggregator aggregator = new ListAggregator();
         int max = aggregator.max(list);
-        Assertions.assertEquals(-1, max);
+        Assertions.assertEquals(5, max);
     }
     @Test
     public void min() {
