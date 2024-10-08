@@ -24,10 +24,9 @@ public class ListAggregator {
      * Calculates the maximum value in a list.
      * @return The maximum value in the list.
      */
-    public Integer max(List<Integer> list) {
-        int max = 0;
-
-        for (Integer number : list)
+    public Integer max(List<Integer> list7263) {
+        int max = Integer.MIN_VALUE;
+        for (Integer number : list7263)
             if (number > max)
                 max = number;
 
