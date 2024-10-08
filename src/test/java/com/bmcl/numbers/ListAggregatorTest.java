@@ -6,11 +6,14 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 public class ListAggregatorTest {
+
     private List<Integer> list;
     @BeforeEach
     public void setUp() {
-        list = Arrays.asList(1,2,4,2,5);
+        //list = Arrays.asList(1,2,4,2,5);
+        list = Arrays.asList(-1,-4,-5);
     }
+
     @Test
     public void sum() {
         ListAggregator aggregator = new ListAggregator();
@@ -19,10 +22,10 @@ public class ListAggregatorTest {
     }
     @Test
     public void max() {
-        //List<Integer> list = Arrays.asList(1,2,4,2,5);
+        List<Integer> list = Arrays.asList(-1, -4, -5);
         ListAggregator aggregator = new ListAggregator();
         int max = aggregator.max(list);
-        Assertions.assertEquals(5, max);
+        Assertions.assertEquals(-1, max);
     }
     @Test
     public void min() {
