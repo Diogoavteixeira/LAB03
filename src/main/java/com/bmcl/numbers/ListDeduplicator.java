@@ -8,6 +8,21 @@ import java.util.List;
  * from a list.
  */
 public class ListDeduplicator implements GenericListDeduplicator{
+    private final GenericListSorter sorter;
+    public ListDeduplicator(GenericListSorter sorter) {
+        this.sorter = sorter;
+    }
+    public List<Integer> deduplicate(List<Integer> list) {
+        List<Integer> sorted = sorter.sort(list);
+        List<Integer> unique = new ArrayList<>();
+        Integer last = null;
+        for (Integer number : sorted)
+            if (!number.equals(last)) {
+                last = number;
+                unique.add(number);
+            }
+        return unique;
+    }
 
     /**
      * Removes duplicate numbers from a list.
@@ -15,21 +30,7 @@ public class ListDeduplicator implements GenericListDeduplicator{
      * but withou duplicates. The order of the numbers might
      * change.
      */
-    public List<Integer> deduplicate(List<Integer> list) {
-        ListSorter listSorter = new ListSorter();
-        List<Integer> sorted = listSorter.sort(list);
-        List<Integer> unique = new ArrayList<>();
 
-        Integer last = null;
-
-        for (Integer number : sorted)
-            if (!number.equals(last)) {
-                last = number;
-                unique.add(number);
-            }
-
-        return unique;
-    }
 
 }
 
