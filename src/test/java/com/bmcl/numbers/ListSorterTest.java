@@ -1,4 +1,5 @@
 package com.aor.numbers;
+import com.bmcl.numbers.GenericListDeduplicator;
 import com.bmcl.numbers.ListSorter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +15,7 @@ public class ListSorterTest {
 
     private List<Integer> list;
     private List<Integer> expected;
+    private GenericListDeduplicator deduplicator;
 
 
     @BeforeEach
