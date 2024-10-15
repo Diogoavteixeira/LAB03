@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bmcl.numbers.ListFiltererTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-10-15T09:30:05" hostname="MOBLEIDT" time="0.008">
+<testsuite name="com.bmcl.numbers.ListFiltererTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-10-15T20:25:25" hostname="MOBLEIDT" time="0.036">
   <properties/>
-  <testcase name="testDivisibleByFilter()" classname="com.bmcl.numbers.ListFiltererTest" time="0.004"/>
-  <testcase name="testEmptyList()" classname="com.bmcl.numbers.ListFiltererTest" time="0.003"/>
-  <testcase name="testPositiveFilter()" classname="com.bmcl.numbers.ListFiltererTest" time="0.0"/>
+  <testcase name="acceptDivideBy2()" classname="com.bmcl.numbers.ListFiltererTest" time="0.004"/>
+  <testcase name="acceptDivideBy3()" classname="com.bmcl.numbers.ListFiltererTest" time="0.001"/>
+  <testcase name="filter()" classname="com.bmcl.numbers.ListFiltererTest" time="0.026"/>
+  <testcase name="testEmptyList()" classname="com.bmcl.numbers.ListFiltererTest" time="0.001"/>
+  <testcase name="testPositiveFilter()" classname="com.bmcl.numbers.ListFiltererTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

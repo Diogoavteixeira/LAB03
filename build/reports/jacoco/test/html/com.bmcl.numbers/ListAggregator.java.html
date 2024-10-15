@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ListAggregator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">numbers</a> &gt; <a href="index.source.html" class="el_package">com.bmcl.numbers</a> &gt; <span class="el_source">ListAggregator.java</span></div><h1>ListAggregator.java</h1><pre class="source lang-java linenums">package com.bmcl.numbers;
+
+import java.util.List;
+
+/**
+ * A utility class that aggregates list of numbers
+ * into a single integer using various functions.
+ */
+<span class="fc" id="L9">public class ListAggregator {</span>
+    /**
+     * Sums all numbers in a list.
+     * @return The sum of all the values in the list.
+     */
+    public Integer sum(List&lt;Integer&gt; list) {
+<span class="fc" id="L15">        int sum = 0;</span>
+
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        for (Integer number : list)</span>
+<span class="fc" id="L18">            sum += number;</span>
+
+<span class="fc" id="L20">        return sum;</span>
+    }
+
+    /**
+     * Calculates the maximum value in a list.
+     * @return The maximum value in the list.
+     */
+    public Integer max(List&lt;Integer&gt; list) {
+<span class="fc" id="L28">        int max = Integer.MIN_VALUE;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (Integer number : list)</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            if (number &gt; max)</span>
+<span class="fc" id="L31">                max = number;</span>
+
+<span class="fc" id="L33">        return max;</span>
+    }
+
+    /**
+     * Calculates the minimum value in a list.
+     * @return The minimum value in the list.
+     */
+    public Integer min(List&lt;Integer&gt; list) {
+<span class="fc" id="L41">        int min = Integer.MAX_VALUE;</span>
+
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        for (Integer number : list)</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            if (number &lt; min)</span>
+<span class="fc" id="L45">                min = number;</span>
+
+<span class="fc" id="L47">        return min;</span>
+    }
+
+    /**
+     * Counts the number of distinct numbers in a list.
+     * @return The number of distinct numbers.
+     */
+    public int distinct(List&lt;Integer&gt; list, GenericListDeduplicator deduplicator) {
+<span class="fc" id="L55">        List&lt;Integer&gt; distinct = deduplicator.deduplicate(list);</span>
+<span class="fc" id="L56">        return distinct.size();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'info.solidsoft.pitest' version '1.6.0'
+    id 'jacoco'
 
 }
 
@@ -22,6 +23,21 @@ dependencies {
 }
 pitest {
     junit5PluginVersion = '0.12'
+}
+jacoco {
+    toolVersion = "0.8.7"
+}
+
+tasks.test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
 
 test {
