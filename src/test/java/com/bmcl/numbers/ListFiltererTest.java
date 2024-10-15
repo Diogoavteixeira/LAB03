@@ -2,6 +2,7 @@ package com.bmcl.numbers;
 
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -23,4 +24,13 @@ public class ListFiltererTest {
         List<Integer> expected = Arrays.asList(3, 6);
         assertEquals(expected, filterer.filter(input));
     }
+
+    @Test
+    public void testEmptyList() {
+        ListFilterer filterer = new ListFilterer(new PositiveFilter());
+        List<Integer> input = Collections.emptyList();
+        List<Integer> expected = Collections.emptyList();
+        assertEquals(expected, filterer.filter(input));
+    }
+
 }
