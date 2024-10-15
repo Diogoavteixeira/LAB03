@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ListpositiveTest {
+public class PositiveFilterTest {
 
     @Test
     public void testPositiveFilter() {

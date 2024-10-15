@@ -5,7 +5,7 @@ plugins {
 
 }
 
-group 'com.bmclr.numbers'
+group 'com.bmcl.numbers'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -20,6 +20,8 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:3.7.7'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.8'
 }
 pitest {
     junit5PluginVersion = '0.12'

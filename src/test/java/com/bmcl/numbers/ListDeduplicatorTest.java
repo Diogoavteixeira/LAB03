@@ -1,6 +1,5 @@
-package com.aor.numbers;
-import com.bmcl.numbers.GenericListSorter;
-import com.bmcl.numbers.ListDeduplicator;
+package com.bmcl.numbers;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
