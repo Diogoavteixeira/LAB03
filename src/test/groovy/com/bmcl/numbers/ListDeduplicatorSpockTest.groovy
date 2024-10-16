@@ -1,25 +1,23 @@
 package com.bmcl.numbers
 
-
 import spock.lang.Specification
 
-
 class ListDeduplicatorSpockTest extends Specification {
-    private List<Integer> list
-    private List<Integer> expected
+    List<Integer> list
+    List<Integer> expected
+    GenericListSorter sorter
+    ListDeduplicator deduplicator
 
-    @org.junit.Before
-    void setUp() {
+    def setup() {
         list = [1, 2, 4, 2, 5]
         expected = [1, 2, 4, 5]
+        sorter = Mock(GenericListSorter)
+        deduplicator = new ListDeduplicator(sorter)
     }
 
     def "deduplicate"() {
         given:
-        def sorter = Stub(GenericListSorter) {
-            sort(_) >> [1, 2, 2, 4, 5]
-        }
-        def deduplicator = new ListDeduplicator(sorter)
+        sorter.sort(_) >> [1, 2, 2, 4, 5]
 
         when:
         def distinct = deduplicator.deduplicate(list)
@@ -28,14 +26,11 @@ class ListDeduplicatorSpockTest extends Specification {
         distinct == expected
     }
 
-    def "bug_deduplicate_8726"() {
+    def "bug deduplicate 8726"() {
         given:
-        def list = [1, 2, 4, 2]
+        list = [1, 2, 4, 2]
         expected = [1, 2, 4]
-        def sorter = Stub(GenericListSorter) {
-            sort(_) >> [1, 2, 2, 4]
-        }
-        def deduplicator = new ListDeduplicator(sorter)
+        sorter.sort(_) >> [1, 2, 2, 4]
 
         when:
         def distinct = deduplicator.deduplicate(list)

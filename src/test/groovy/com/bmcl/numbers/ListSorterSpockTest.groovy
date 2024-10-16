@@ -2,14 +2,12 @@ package com.bmcl.numbers
 
 import spock.lang.Specification
 
-
 class ListSorterSpockTest extends Specification {
 
     private List<Integer> list
     private List<Integer> expected
 
-    @org.junit.Before
-    void setUp() {
+    def setup() {
         list = [3, 2, 6, 1, 4, 5, 7]
         expected = [1, 2, 3, 4, 5, 6, 7]
     }
@@ -25,7 +23,7 @@ class ListSorterSpockTest extends Specification {
         sorted == expected
     }
 
-    def "bug_sort_8276"() {
+    def "bug sort 8276"() {
         given:
         def sorter = new ListSorter()
 

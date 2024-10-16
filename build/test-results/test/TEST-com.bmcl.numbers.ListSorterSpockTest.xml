@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bmcl.numbers.ListSorterSpockTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-16T10:22:28" hostname="MOBLEIDT" time="0.002">
+  <properties/>
+  <testcase name="sort" classname="com.bmcl.numbers.ListSorterSpockTest" time="0.001"/>
+  <testcase name="bug sort 8276" classname="com.bmcl.numbers.ListSorterSpockTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

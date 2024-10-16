@@ -6,18 +6,18 @@ import java.util.List;
 public class ListFilterer {
     private final GenericListFilter filter;
 
-<span class="nc" id="L9">    public ListFilterer(GenericListFilter filter) {</span>
-<span class="nc" id="L10">        this.filter = filter;</span>
-<span class="nc" id="L11">    }</span>
+<span class="fc" id="L9">    public ListFilterer(GenericListFilter filter) {</span>
+<span class="fc" id="L10">        this.filter = filter;</span>
+<span class="fc" id="L11">    }</span>
 
     public List&lt;Integer&gt; filter(List&lt;Integer&gt; list) {
-<span class="nc" id="L14">        List&lt;Integer&gt; filteredList = new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L15" title="All 2 branches missed.">        for (Integer number : list) {</span>
-<span class="nc bnc" id="L16" title="All 2 branches missed.">            if (filter.accept(number)) {</span>
-<span class="nc" id="L17">                filteredList.add(number);</span>
+<span class="fc" id="L14">        List&lt;Integer&gt; filteredList = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for (Integer number : list) {</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">            if (filter.accept(number)) {</span>
+<span class="fc" id="L17">                filteredList.add(number);</span>
             }
-<span class="nc" id="L19">        }</span>
-<span class="nc" id="L20">        return filteredList;</span>
+<span class="fc" id="L19">        }</span>
+<span class="fc" id="L20">        return filteredList;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
