@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bmcl.numbers.ListAggregatorSpockTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-10-16T10:22:28" hostname="MOBLEIDT" time="0.564">
+<testsuite name="com.bmcl.numbers.ListAggregatorSpockTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-10-17T11:18:07" hostname="MOBLEIDT" time="0.639">
   <properties/>
-  <testcase name="Testing: sum" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.068"/>
+  <testcase name="Testing: sum" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.072"/>
   <testcase name="Testing: max" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.001"/>
-  <testcase name="Testing: min" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.001"/>
-  <testcase name="Testing: distinct" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.006"/>
-  <testcase name="Testing max bug 7263" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.0"/>
-  <testcase name="testing distinct bug 8726" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.047"/>
-  <testcase name="testing distinct bug 8726 with expectation" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.439"/>
+  <testcase name="Testing: min" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.002"/>
+  <testcase name="Testing: distinct" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.005"/>
+  <testcase name="Testing max bug 7263" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.001"/>
+  <testcase name="testing distinct bug 8726" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.041"/>
+  <testcase name="testing distinct bug 8726 with expectation" classname="com.bmcl.numbers.ListAggregatorSpockTest" time="0.516"/>
   <system-out><![CDATA[3
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
